@@ -56,7 +56,7 @@ function App() {
       <ul className="task-list">
         {tasks.map((task, index) => (
           <li key={index} className="task-item">
-            <span className="task-text">{task.text}</span>
+            <span className={task.completed? "task-text completed" : "task-text"}>{task.text}</span>
             <input 
               type ="checkbox"
               checked = {task.completed}
