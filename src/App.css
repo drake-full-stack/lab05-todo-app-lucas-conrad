@@ -85,11 +85,15 @@ h1 {
   padding: 10px 20px;
   font-size: 16px;
   background-color: #e74c3c;
-  color: white;
+  color: rgb(255, 239, 239);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.2s;
+}
+
+.clear-button:hover{
+  opacity: 1;
 }
 
 .task-text.completed {
