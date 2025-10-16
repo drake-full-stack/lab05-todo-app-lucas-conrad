@@ -33,13 +33,21 @@ function App() {
       )
     );
   }
+  
+  const handleClearCompleted = () => {
+    setTasks(tasks.filter(task => !task.completed));
+  };
 
+  const incompleteTasks = tasks.filter(task => !task.completed);
   console.log(tasks);
 
   // ==== JSX that gets returned =====
   return (
     <div className="container">
       <h1>My To Do List</h1>
+      <p className="task-counter" >
+        {incompleteTasks.length} {incompleteTasks.length === 1 ? 'task' : 'tasks'} remaining
+      </p>
       <form onSubmit={handleAddTask} className="add-task-form">
         <input
           type="text"
@@ -52,7 +60,9 @@ function App() {
           Add
         </button>
       </form>
-
+      <button onClick={handleClearCompleted} className="clear-button">
+        Clear Completed
+      </button>
       <ul className="task-list">
         {tasks.map((task, index) => (
           <li key={index} className="task-item">
